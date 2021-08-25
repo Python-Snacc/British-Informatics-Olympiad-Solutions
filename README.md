@@ -1,6 +1,7 @@
 # British-Informatics-Olympiad
 
 https://github.com/Python-Snacc/British-Informatics-Olympiad-Solutions
+
 Very readable, relatively easy-to-understand solutions for the British Informatics Olympiad.
 While most of these solutions are done without any help, a few of these files are modified versions of other people's code. Check out **Matthewelse** and **Spookiel**.
 
