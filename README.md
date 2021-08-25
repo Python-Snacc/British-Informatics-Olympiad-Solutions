@@ -1,4 +1,7 @@
+<meta name="google-site-verification" content="ofrgi_RWCLndaIIuUgGi97P3mYjCpyBnVTf9d_9CvQU" />
+
 # British-Informatics-Olympiad
+
 
 https://github.com/Python-Snacc/British-Informatics-Olympiad-Solutions
 
