@@ -1,9 +1,5 @@
-<head> <meta name="google-site-verification" content="SPktn7x8SHEAhMLC1V6bOVMq0k77dhlj59GLf_rWySE" /> </head>
-
 # British-Informatics-Olympiad
 
-
-https://github.com/Python-Snacc/British-Informatics-Olympiad-Solutions
 
 Very readable, relatively easy-to-understand solutions for the British Informatics Olympiad.
 While most of these solutions are done without any help, a few of these files are modified versions of code by **Matthewelse** and **Spookiel**. I definitely recommend checking them out.
