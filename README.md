@@ -1,4 +1,4 @@
-<meta name="google-site-verification" content="SPktn7x8SHEAhMLC1V6bOVMq0k77dhlj59GLf_rWySE" />
+<head> <meta name="google-site-verification" content="SPktn7x8SHEAhMLC1V6bOVMq0k77dhlj59GLf_rWySE" /> </head>
 
 # British-Informatics-Olympiad
 
