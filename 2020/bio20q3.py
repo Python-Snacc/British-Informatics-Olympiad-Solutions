@@ -1,3 +1,5 @@
+# This is HEAVILY inspired by Matthewelse. His solutions are also available on GitHub!
+
 from functools import lru_cache
 
 

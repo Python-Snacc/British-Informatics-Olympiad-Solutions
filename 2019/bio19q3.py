@@ -1,3 +1,6 @@
+# Uses memoization for speed.
+# Did you know that you can't memoize using a list as a key? My solution here was to use * to "unzip" it".
+
 from functools import lru_cache
 import time
 
