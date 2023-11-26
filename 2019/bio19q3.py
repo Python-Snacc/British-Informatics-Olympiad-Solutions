@@ -1,5 +1,4 @@
-# Uses memoization for speed.
-# Did you know that you can't memoize using a list as a key? My solution here was to use * to "unzip" it".
+# Uses LRU cache for speed
 
 from functools import lru_cache
 import time
@@ -32,8 +31,17 @@ def valid2(_set):
                     return False
     return True
 
-memo = {}
+def to_tuple(set_obj):
+    """Converts a set to an ordered tuple"""
+    return tuple(sorted(list(set_obj)))
 
+def remove(tuple_obj, obj):
+    """Removes an item from a tuple"""
+    list_obj = list(tuple_obj)
+    list_obj.remove(obj)
+    return tuple(list_obj)
+
+@lru_cache(maxsize=None)
 def count(length, letters, smallest, afterSmallest):
     if length==wanted:
         return 1
@@ -50,27 +58,10 @@ def count(length, letters, smallest, afterSmallest):
             _afterSmallest = letter
         else:
             continue
-        
-        if length==1:
-            temp = letters.copy()
-            temp.remove(letter)
-            if (length + 1, *temp, _smallest, _afterSmallest) in memo:
-                total += memo[(length + 1, *temp, _smallest, _afterSmallest)]
-            else:
-                x = count(length + 1, temp, _smallest, _afterSmallest)
-                memo[(length + 1, *temp, _smallest, _afterSmallest)] = x
-                total += x
-            continue
-        # elif valid((string[-2],string[-1],letter)):
-        temp = letters.copy()
-        temp.remove(letter)
-        #if valid2(string + [letter]):
-        if (length + 1, *temp, _smallest, _afterSmallest) in memo:
-            total += memo[(length + 1, *temp, _smallest, _afterSmallest)]
-        else:
-            x = count(length + 1, temp, _smallest, _afterSmallest)
-            memo[(length + 1, *temp, _smallest, _afterSmallest)] = x
-            total += x
+    
+        temp = remove(letters, letter)
+        x = count(length + 1, temp, _smallest, _afterSmallest)
+        total += x
     return total
 
 letters = set(x for x in range(l))
@@ -87,6 +78,9 @@ if y != len(used) -1:
 
 for x in used:
     letters.remove(x)
+
+letters = to_tuple(letters) # Convert to tuple for LRU caching
+
 if len(used) > 2:
     if valid2(used):
         start = time.time()
